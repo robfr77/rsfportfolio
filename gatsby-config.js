@@ -1,11 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Cybersecurity Analyst | Web Developer`,
+    description: `Rob Friedman portfolio page`,
+    author: `Rob Friedman`,
+    siteUrl: `https://www.rsfportfolio.com`,
   },
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://www.rsfportfolio.com`,
+        policy: [{ userAgent: `*`, allow: `/` }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,17 +28,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Rob Friedman portfolio`,
+        short_name: `RF portfolio`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#F1ECE6`,
+        theme_color: `#4C6D8D`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
