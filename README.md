@@ -3,7 +3,7 @@
 > Rob S. Friedman portfolio page
 
 ## Built With
-* [Nextjs](https://nextjs.org/)
+* [Next.js](https://nextjs.org/)
 * [React](https://reactjs.org/)
 * [Bulma](https://bulma.io/)
 
