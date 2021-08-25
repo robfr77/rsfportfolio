@@ -1,0 +1,73 @@
+@import "colors.scss";
+
+.main {
+  margin-top: 5rem;
+  flex: 1;
+}
+
+.about {
+    span {
+        font-style: italic;
+    }
+    .columns {
+        text-align: center;
+    }
+  }
+
+.work {
+  article {
+    border: 2px solid $beige-light;
+    box-shadow: none;
+    position: relative;
+    top: 0;
+    transition-property: box-shadow, top;
+    transition-duration: .2s;
+
+    &:hover {
+        border: 2px solid $whiteish;
+        box-shadow: 0 1em 2em 0.25em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+        top: -4px;
+    }
+    a[target="_blank"] {
+        color: $blue-light;
+        display: block;
+        margin: 1rem auto;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    p {
+        color: $green;
+        margin-bottom: 1.5rem;
+    }
+    time {
+        color: $beige-dark;
+        display: block;
+        position: relative;
+        text-align: right;
+        top: .33rem;
+    }
+  }
+}
+
+.footer {
+  flex: 1;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  svg {
+    bottom: 0;
+    color: $green;
+    display: block;
+    margin: 0 auto .75rem;
+    position: relative;
+    transition: 0.75s;
+    &:hover {
+        bottom: 10px;
+    }
+  }
+  div {
+    text-align: center;
+  }
+}
