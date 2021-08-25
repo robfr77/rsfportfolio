@@ -5,7 +5,7 @@ import { stripTrailingSlash } from '../utils/helpers';
 const Card = ({ children, project: { title, link, time } }) => {
   const trimmedLink = stripTrailingSlash(link);
 
-    return (
+  return (
     <article className="card">
       <div className="card-content">
         <div className="media has-text-centered">

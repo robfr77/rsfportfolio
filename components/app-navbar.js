@@ -39,7 +39,7 @@ const AppNavbar = () => {
           src="/images/hero.jpeg"
           height={80}
           width={78}
-          priority={true}
+          priority
           alt="Robert Friedman with family, by a tree"
         />
       </div>
