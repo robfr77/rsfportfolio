@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+	endDate: string
+}
+
+const { endDate } = Astro.props
+---
+
+<h1>Temporary Maintenance</h1>
+<p>Apologies for the inconvenience.</p>
+<p>Check back in {endDate}!</p>
+<Icon name="mdi:wrench" width="100" />
+
+<style>
+    h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin: 3rem 0;
+	}
+	p {
+		font-size: 2rem;
+		text-align: center;
+	}
+	[astro-icon] {
+		display: block;
+		margin: 3rem auto;
+	}
+</style>

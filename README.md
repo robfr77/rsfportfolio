@@ -1,25 +1,28 @@
-# portfolio
+# Web Application Developer
 
-> Rob S. Friedman portfolio page
+> Portfolio page
 
 ## Built With
-* [Next.js](https://nextjs.org/)
-* [React](https://reactjs.org/)
-* [Bulma](https://bulma.io/)
+* [Astro](https://astro.build/)
+* [Vercel](https://vercel.com/)
 
 ## Author
 * **Robert Friedman**
 
 ## License
-This project is licensed under the MIT License.
-``` bash
+* This project is licensed under the MIT License.
+
+## Commands
+```bash
 # install dependencies
-$ yarn install
+$ npm install
 
 # start the development server
-$ yarn run dev
+$ npm run dev
 
-# compile for production and launch server
-$ yarn run build
-$ npm run start
+# build for production to ./dist/
+$ npm run build
+
+# Preview the build locally
+$ npm run preview
 ```
