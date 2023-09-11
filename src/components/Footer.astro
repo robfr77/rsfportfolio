@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon"
+---
+
+<footer class="mt-12 px-12 mb-4">
+  <div class="footer-top mb-4">
+    <ul class="flex justify-evenly">
+      <li>
+        <a href="https://www.linkedin.com/in/robert-friedman-581095184/">
+          <Icon
+            aria-label="Linked In"
+            name="mdi:linkedin"
+            width="48"
+            class="relative bottom-0 transition-bottom hover:bottom-1"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/RF_Resume.pdf">
+          <Icon
+            aria-label="Resume"
+            name="mdi:file"
+            width="48"
+            class="relative bottom-0 transition-bottom hover:bottom-1"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.github.com/robfr77">
+          <Icon
+            aria-label="Github"
+            name="mdi:github"
+            width="48"
+            class="relative bottom-0 transition-bottom hover:bottom-1"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.upwork.com/freelancers/~01c0007495264267a0">
+          <Icon
+            aria-label="Upwork"
+            name="simple-icons:upwork"
+            width="48"
+            class="relative bottom-0 transition-bottom hover:bottom-1"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="border-t-2 border-slate-300">
+    <span>&copy Robert Friedman 2023</span>
+  </div>
+</footer>
+
+<style>
+  [astro-icon="mdi:linkedin"] {
+    color: #0077b5;
+  }
+  [astro-icon="simple-icons:upwork"] {
+    color: #14a800;
+  }
+</style>

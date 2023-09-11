@@ -5,6 +5,8 @@
 ## Built With
 * [Astro](https://astro.build/)
 * [Vercel](https://vercel.com/)
+* [Tailwind](https://tailwindcss.com/)
+* [FormSubmit](https://formsubmit.co/)
 
 ## Author
 * **Robert Friedman**

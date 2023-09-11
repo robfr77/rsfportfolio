@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets"
+import heroPic from "../assets/hero_pic.jpg"
+---
+
+<section id="hero" class="mt-16 min-h-2/3">
+  <div class="h-full flex flex-col items-center justify-evenly">
+    <h1 class="text-center my-12 md:my-16 md:text-5xl">Web Developer</h1>
+    <Image
+      src={heroPic}
+      alt="Robert Friedman standing over a bridge"
+      loading="eager"
+      decoding="sync"
+      class="rounded-full"
+    />
+    <div class="my-8 text-center text-lg sm:text-xl md:text-2xl">
+      <p class="my-4 md:my-8">
+        Enthusiastic about scripting in JavaScript and Python, I enjoy the
+        engineering aspect of the web.
+      </p>
+      <p class="my-4 md:my-8">
+        I'm passionate for web accessibility & ensuring customer satisfaction.
+      </p>
+    </div>
+  </div>
+</section>

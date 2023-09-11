@@ -1,0 +1,104 @@
+<header class="w-full sticky top-0 z-10">
+  <nav class="navbar flex justify-between items-center">
+    <div
+      class="navbar-title m-2 p-2 text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl"
+    >
+      <a href="/" class="hover:text-blue-500" ">RSF</a>
+    </div>
+    <button
+      class="navbar-burger absolute top-6 right-4 flex sm:hidden flex-col justify-between w-8 h-5 z-10"
+    >
+      <span class="bar h-1 w-full bg-black rounded-xl"></span>
+      <span class="bar h-1 w-full bg-black rounded-xl"></span>
+      <span class="bar h-1 w-full bg-black rounded-xl"></span>
+    </button>
+    <div class="navbar-links mr-4">
+      <ul class="flex sm:text-xl md:text-2xl 2xl:text-3xl">
+        <li class="hover:text-gray-500 transition-[color]">
+          <a class="navbar-link p-4 block" href="#about" data-section="about"
+            >About</a
+          >
+        </li>
+        <li class="hover:text-gray-500 transition-[color]">
+          <a
+            class="navbar-link p-4 block"
+            href="#projects"
+            data-section="projects">Projects</a
+          >
+        </li>
+        <li class="hover:text-gray-500 transition-[color]">
+          <a
+            class="navbar-link p-4 block"
+            href="#contact"
+            data-section="contact">Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  @media (max-width: 639px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navbar-title {
+      align-self: flex-start;
+    }
+    .navbar-links {
+      display: none;
+      justify-content: end;
+      width: 100%;
+    }
+    .navbar-links ul {
+      flex-direction: column;
+    }
+    .navbar-links li {
+      text-align: center;
+      margin-right: 0.5rem;
+    }
+    .navbar-links a {
+      padding: 0.5rem 1rem;
+    }
+    .navbar-links.active {
+      display: flex;
+    }
+    .bar {
+      transition: transform 300ms;
+    }
+    .mobile:nth-child(1) {
+      position: absolute;
+      transform: rotate(45deg);
+      top: 5px;
+    }
+    .mobile:nth-child(even) {
+      display: none;
+    }
+    .mobile:nth-child(3) {
+      position: absolute;
+      transform: rotate(135deg);
+      top: 5px;
+    }
+  }
+</style>
+
+<script>
+  // set navbar max Height to prevent mobile content shift on hamburger toggle
+  const navbar = document.querySelector("nav")
+  const navbarHeight = navbar.offsetHeight
+  navbar.style.maxHeight = navbarHeight + "px"
+
+  // set up event listener & class toggling for hamburger toggle
+  const navbarBurger = document.querySelector(".navbar-burger")
+  const navbarLinksContainer = document.querySelector(".navbar-links")
+  const spanBars = document.querySelectorAll(".bar")
+
+  navbarBurger.addEventListener("click", () => {
+    navbarLinksContainer.classList.toggle("active")
+    for (const spanBar of spanBars) {
+      spanBar.classList.toggle("mobile")
+    }
+  })
+</script>

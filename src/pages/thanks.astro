@@ -1,14 +1,5 @@
 ---
-import Nav from "../components/Nav.astro"
-import Footer from "../components/Footer.astro"
-
 import "../styles/main.css"
-
-interface Props {
-  title: string
-}
-
-const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -19,23 +10,16 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Robert Friedman | Web Developer</title>
   </head>
   <body>
-    <Nav />
-    <main class="px-12">
-      <slot />
+    <main class="px-12 h-screen grid place-items-center">
+      <section>
+        <h1 class="text-center mb-8">
+          Thanks for getting in touch! You will hear back from me shortly.
+        </h1>
+        <a href="/" class="link block text-center text-2xl">Go back home.</a>
+      </section>
     </main>
-    <Footer />
   </body>
 </html>
-
-<style is:global>
-  html {
-    font-family: system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
-  button {
-    outline: none;
-  }
-</style>

@@ -1,0 +1,51 @@
+<form action="https://formsubmit.co/robfr77@gmail.com" method="POST">
+  <p class="text-center my-4 sm:text-xl">
+    Get in touch here or email me at <a
+      class="link"
+      href="mailto:robfr77@gmail.com">robfr77@gmail.com</a
+    >
+  </p>
+  <div class="mb-4">
+    <label for="name">Your name</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      aria-required="true"
+      autocomplete="name"
+      required
+      placeholder="Enter your name"
+      class="form-input w-full mb-2 py-2 rounded invalid:[&:not(:placeholder-shown):not(:focus)]:!border-red-500"
+    />
+    <label for="email">Your email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      aria-required="true"
+      autocomplete="email"
+      required
+      placeholder="Enter your email"
+      class="form-input w-full mb-2 py-2 rounded invalid:[&:not(:placeholder-shown):not(:focus)]:!border-red-500"
+    />
+  </div>
+  <div>
+    <label for="message">Your message</label>
+    <textarea
+      rows="5"
+      name="message"
+      id="message"
+      aria-required="true"
+      required
+      placeholder="Hi, I'd like to speak with you about my project!"
+      class="form-textarea w-full mb-2 py-2 rounded invalid:[&:not(:placeholder-shown):not(:focus)]:!border-red-500"
+    ></textarea>
+    <input type="hidden" name="_next" value="https://rsfportfolio.com/thanks" />
+    <input type="hidden" name="_captcha" value="false" />
+  </div>
+  <button
+    type="submit"
+    class="p-2 rounded border-solid border-2 border-slate-500 hover:border-blue-500"
+    >Get in touch &#8594</button
+  >
+</form>

@@ -1,22 +1,105 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Maintenance from '../components/Maintenance.astro'
+import Layout from "../layouts/Layout.astro"
+import Card from "../components/Card.astro"
+import Hero from "../components/Hero.astro"
+import ContactForm from "../components/ContactForm.astro"
 ---
 
 <Layout title="Robert Friedman | Web Developer">
-	<main>
-		<Maintenance endDate="September 2023"/>
-	</main>
+  <Hero />
+  <section id="about" class="my-12">
+    <h2 class="py-8 text-center sm:text-4xl">About</h2>
+    <div>
+      <p class="my-4 sm:text-xl">
+        My work history is a mixture of web development and customer service
+        roles. In my most recent position, as an assistant manager at a <a
+          href="https://greenheartjuiceshop.com/"
+          class="link">juice and smoothie wellness shop</a
+        >, I oversaw customer and employee relations, doing my best to serve
+        business success.
+      </p>
+      <p class="my-4 sm:text-xl">
+        I started working in web development in 2016 after studying with <a
+          href="https://www.freecodecamp.org/certification/fcc23b5b482/javascript-algorithms-and-data-structures"
+          class="link">Free Code Camp</a
+        >. My first work project involved front end forms, a backend API, and
+        data visualization. I also have a foundation in <a
+          href="/Online August 2020 Certificates of Completion.pdf"
+          class="link">Cybersecurity</a
+        >.
+      </p>
+      <p class="my-4 sm:text-xl">
+        I'm passionate for music, nature, yoga and travel, which has helped me
+        through a career interruption in 2017. A father and survivor, I'm eager
+        for new opportunities.
+      </p>
+    </div>
+  </section>
+  <section id="projects" class="py-8 my-12">
+    <h2 class="text-center sm:text-4xl">Projects</h2>
+    <div class="my-8 flex gap-8 justify-center flex-col sm:flex-row sm:gap-8">
+      <Card project={{ title: "R&W", link: "www.r-wgroup.com", time: "2019" }}>
+        Handled update of third party user portal for staffing agency. Helped
+        ensure a smooth transition for users.
+      </Card>
+      <Card project={{ title: "What's Trending", link: "", time: "2017" }}>
+        Private application based on{" "}
+        <a href="https://github.com/GeneralMills/pytrends">Pytrends</a>. Google
+        search trends displayed via a React and D3 charting application.
+      </Card>
+    </div>
+  </section>
+  <section id="contact" class="my-12">
+    <h2 class="text-center sm:text-4xl">Contact</h2>
+    <ContactForm />
+  </section>
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-</style>
+<script>
+  /* Intersection observer: underlines active section of page, in nav */
+
+  // get HTML Collections
+  const sections = document.querySelectorAll("section")
+  const navbarLinks = document.querySelectorAll(".navbar-link")
+
+  // utils
+  const activeSectionHandler = (currentSectionId) => {
+    navbarLinks.forEach((link) => {
+      if (
+        link instanceof HTMLElement &&
+        link.dataset.section === currentSectionId
+      ) {
+        link.classList.add(
+          "underline",
+          "decoration-blue-500",
+          "underline-offset-8"
+        )
+        return
+      }
+      link.classList.remove(
+        "underline",
+        "decoration-blue-500",
+        "underline-offset-8"
+      )
+    })
+  }
+  // intersection observer
+  const cb = (section) => {
+    section.forEach((section) => {
+      if (!section.isIntersecting) {
+        return
+      }
+      activeSectionHandler(section.target.id)
+    })
+  }
+  // 100% of section must be on screen to trigger observer
+  const options = {
+    threshold: 1,
+  }
+
+  const sectionWatcher = new IntersectionObserver(cb, options)
+
+  for (const section of sections) {
+    sectionWatcher.observe(section)
+  }
+</script>
