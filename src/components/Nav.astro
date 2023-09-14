@@ -1,24 +1,39 @@
 <header class="w-full sticky top-0 z-10">
-  <nav class="navbar flex justify-between items-center">
-    <div class="navbar-title m-2 p-2 text-2xl md:text-3xl 2xl:text-4xl">
+  <nav
+    class="navbar flex justify-between items-center"
+    aria-label="Navigation menu"
+  >
+    <div class="navbar-title m-2 p-2 text-xl md:text-2xl">
       <a href="/" class="hover:text-blue-500" ">RSF</a>
     </div>
     <button
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="navbar-menu"
+      aria-label="Open the navigation menu"
+      id="navbar-burger"
       class="navbar-burger absolute top-1/2 translate-y-[-50%] right-4 flex sm:hidden flex-col justify-between w-8 h-5 z-10"
     >
-      <span class="bar h-1 w-full bg-black rounded-xl"></span>
-      <span class="bar h-1 w-full bg-black rounded-xl"></span>
-      <span class="bar h-1 w-full bg-black rounded-xl"></span>
+      <span class="bar h-1 w-full bg-black rounded-xl" aria-hidden="true"
+      ></span>
+      <span class="bar h-1 w-full bg-black rounded-xl" aria-hidden="true"
+      ></span>
+      <span class="bar h-1 w-full bg-black rounded-xl" aria-hidden="true"
+      ></span>
     </button>
     <div class="navbar-links mr-4">
-      <ul class="flex text-xl md:text-3xl 2xl:text-4xl">
+      <ul role="menu" aria-labelledby="navbar-burger" id="navbar-menu" class="flex text-xl md:text-2xl">
         <li class="hover:text-gray-500 transition-[color]">
-          <a class="navbar-link p-4 block" href="#about" data-section="about"
-            >About</a
+          <a 
+            role="menuitem" 
+            class="navbar-link p-4 block" 
+            href="#about" 
+            data-section="about">About</a
           >
         </li>
         <li class="hover:text-gray-500 transition-[color]">
           <a
+            role="menuitem"
             class="navbar-link p-4 block"
             href="#projects"
             data-section="projects">Projects</a
@@ -26,6 +41,7 @@
         </li>
         <li class="hover:text-gray-500 transition-[color]">
           <a
+            role="menuitem"
             class="navbar-link p-4 block"
             href="#contact"
             data-section="contact">Contact</a
@@ -73,7 +89,7 @@
       top: 5px;
     }
     .mobile:nth-child(even) {
-      opacity: 0;
+      visibility: hidden;
     }
     .mobile:nth-child(3) {
       position: absolute;
@@ -89,13 +105,23 @@
   const navbarHeight = navbar.offsetHeight
   navbar.style.maxHeight = navbarHeight + "px"
 
-  // set up event listener & class toggling for hamburger toggle
+  // set up event listener & class toggling for hamburger/nav links
   const navbarBurger = document.querySelector(".navbar-burger")
   const navbarLinksContainer = document.querySelector(".navbar-links")
   const spanBars = document.querySelectorAll(".bar")
 
   navbarBurger.addEventListener("click", () => {
+    // toggle aria-expanded state
+    if (navbarBurger.getAttribute("aria-expanded") === "false") {
+      navbarBurger.setAttribute("aria-expanded", "true")
+    } else {
+      navbarBurger.setAttribute("aria-expanded", "false")
+    }
+
+    // toggle display:flex from display:none for navbar-links container
     navbarLinksContainer.classList.toggle("active")
+
+    // toggle mobile css animation for spanburger
     for (const spanBar of spanBars) {
       spanBar.classList.toggle("mobile")
     }
